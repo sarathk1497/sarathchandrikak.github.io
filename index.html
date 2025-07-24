@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarath Chandrika - Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <style>
         * {
             margin: 0;
@@ -17,7 +18,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -31,7 +32,7 @@
 
         /* Sidebar Navigation - Fixed */
         .sidebar {
-            width: 80px;
+            width: 60px;
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
@@ -73,15 +74,15 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 1rem;
+            padding: 0.6rem;
             color: #333;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            border-left: 4px solid transparent;
+            border-left: 3px solid transparent;
             background: transparent;
-            border-radius: 0 10px 10px 0;
-            margin: 0.5rem 0;
+            border-radius: 0 8px 8px 0;
+            margin: 0.2rem 0;
         }
 
         .nav-item:hover, .nav-item.active {
@@ -92,23 +93,23 @@
         }
 
         .nav-item-icon {
-            font-size: 1.5rem;
-            width: 24px;
+            font-size: 1rem;
+            width: 18px;
             text-align: center;
         }
 
         .nav-item span:not(.nav-item-icon) {
-            display: none; /* Permanently hide text labels */
+            display: none;
         }
 
         /* Main Content */
         .main-content {
-            margin-left: 80px; /* Match sidebar width */
+            margin-left: 60px;
             flex: 1;
             padding: 0;
             overflow-y: auto;
             background: #f8f9fa;
-            width: calc(100% - 80px);
+            width: calc(100% - 60px);
         }
 
         .content-section {
@@ -184,11 +185,18 @@
         .hero-subtitle {
             font-size: 1.5rem;
             color: #666;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-weight: 300;
             height: 2.5rem;
             display: flex;
             align-items: center;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #1e90ff;
+            font-weight: 400;
+            font-style: italic;
         }
 
         .typing-text {
@@ -220,15 +228,7 @@
             to { width: 0; }
         }
 
-        .social-links {
-            display: none;
-        }
-
-        .social-link {
-            display: none;
-        }
-
-        .cta-button {
+        .social-links, .social-link, .cta-button {
             display: none;
         }
 
@@ -237,52 +237,36 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #666;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+            text-align: center;
         }
 
         .about-content p {
             margin-bottom: 1.5rem;
-            font-family: 'Georgia', serif;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
         }
 
-        .about-content p:first-child {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+        .about-profile-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: flex-start;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .about-skills-box {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 4px solid #1e90ff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .about-skills-box h3 {
-            color: #1e90ff;
-            margin-bottom: 1.5rem;
-            font-family: 'Trebuchet MS', sans-serif;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-
-        .about-skills-box p {
-            font-family: 'Verdana', sans-serif !important;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .about-skills-box strong {
-            color: #333;
-            font-family: 'Arial', sans-serif;
-            font-weight: 600;
-        }
-
-        .about-content p:nth-child(4) {
+        .about-hobbies {
+            flex: 1;
+            text-align: left;
             font-style: italic;
-            font-family: 'Times New Roman', serif;
             color: #555;
             background: linear-gradient(135deg, #fff, #f8f9fa);
             padding: 1.5rem;
@@ -290,20 +274,129 @@
             border-left: 3px solid #1e90ff;
         }
 
-        .about-content p:nth-child(5) {
-            font-family: 'Comic Sans MS', cursive;
-            color: #666;
-            font-size: 1.05rem;
+        .about-hobbies ul {
+            list-style: none;
+            padding: 0;
         }
 
-        .about-content p:last-child {
-            font-family: 'Courier New', monospace;
-            background: #f0f8ff;
-            padding: 1rem;
+        .about-hobbies li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .about-footer {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills Display Section */
+        .skills-display-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            border-left: 4px solid #1e90ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .skills-display-box h3 {
+            color: #1e90ff;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            padding: 0.6rem 1rem;
             border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
             color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item i {
+            margin-right: 0.5rem;
             font-size: 1rem;
-            border: 1px dashed #1e90ff;
+            color: #1e90ff;
+        }
+
+        .skill-item:hover {
+            background: #1e90ff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item:hover i {
+            color: white;
+        }
+
+        /* Profile Image Styling */
+        .profile-image {
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1e90ff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-profile-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .about-hobbies {
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 1rem;
+            }
+
+            .skills-display-box {
+                max-width: 100%;
+            }
+
+            .skills-list {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         /* Skills Section */
@@ -720,12 +813,12 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .sidebar {
-                width: 60px;
+                width: 50px;
             }
 
             .main-content {
-                margin-left: 60px;
-                width: calc(100% - 60px);
+                margin-left: 50px;
+                width: calc(100% - 50px);
                 padding: 1rem;
             }
 
@@ -839,6 +932,7 @@
                 <div class="hero-content">
                     <h1 class="hero-title">Sarath Chandrika K</h1>
                     <p class="hero-subtitle">I'm a<span class="typing-text" id="typingText"></span></p>
+                    <p class="hero-tagline">Turning data mess into data magic... ⏳⌨️</p>
                 </div>
             </section>
 
@@ -846,25 +940,37 @@
             <section id="about" class="content-section">
                 <h2 class="section-title">ABOUT</h2>
                 <div class="about-content">
-                    <p>Hey! I'm a Senior Data Engineer at Hartford Financial Service Group, and I absolutely love what I do. I spend my days building data pipelines, working with cloud platforms, and turning messy data into something useful.</p>
-                    
-                    <p>I'm really into Python, SQL, and Spark - they're my go-to tools for getting things done. Whether it's setting up real-time data streams or optimizing databases, I enjoy the challenge of making data systems work better and faster.</p>
-
-                    <div class="about-skills-box">
-                        <h3>What I work with</h3>
-                        
-                        <p style="margin-bottom: 1rem;"><strong>My main skills:</strong> Data engineering, machine learning, analytics, and cloud architecture</p>
-                        
-                        <p style="margin-bottom: 1rem;"><strong>Technologies I use:</strong> Python, SQL, Spark, Kafka, AWS, Azure, Databricks, and lots of other cool tools</p>
-                        
-                        <p><strong>Tools I live in:</strong> VS Code, Git, Tableau, Power BI, and various cloud platforms</p>
+                    <div class="about-text">
+                        <p>Hey there! I’m Chandrika — part data whisperer, part cloud explorer, and full-time believer that good data pipelines make the world a better place 🛠️☁️</p>
+                        <p>I’ve been in the data game for over 6 years, wrangling bytes, streaming events, and optimizing SQL like it's a form of poetry. Whether it's building real-time fraud detection pipelines with Kafka + Spark, modernizing massive workloads on GCP & AWS, or migrating legacy systems into sleek, cloud-native setups — I do it all with a mix of logic, creativity, and just a little caffeine. ☕</p>
                     </div>
-                    
-                    <p>What I love most about this field is that every project is different. One day I'm building fraud detection systems, the next I'm optimizing data lakes or creating dashboards that actually help people make decisions.</p>
-                    
-                    <p>When I'm not coding, I'm usually working on some arts and crafts project, trying out new recipes, or dancing. These hobbies keep me creative and help me think differently about solving technical problems.</p>
-                    
-                    <p>I'm always learning something new in this field - there's constantly new tech to explore and better ways to solve problems. That's what keeps it exciting for me!</p>
+                    <div class="about-profile-container">
+                        <img src="profile.jpg" alt="Sarath Chandrika Profile Photo" class="profile-image">
+                        <div class="about-hobbies">
+                            <p>When I'm not deep in DAGs or debugging a PySpark job at 2 AM (just kidding… mostly), you'll find me:</p>
+                            <ul>
+                                <li>🎨 Crafting something with glitter and glue (yes, I'm serious — arts & DIY is my zen)</li>
+                                <li>💃 Dancing my heart out to a good beat</li>
+                                <li>🧩 Solving tech puzzles or making architecture diagrams look like art</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-footer">
+                        <p>I love building things that scale, spark joy, and just work.</p>
+                        <p>Let’s turn chaos into clean, governed, beautiful data. Or at least have fun trying!</p>
+                    </div>
+                    <div class="skills-display-box">
+                        <h3>Skills</h3>
+                        <div class="skills-list">
+                            <span class="skill-item"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-item"><i class="fas fa-database"></i> SQL</span>
+                            <span class="skill-item"><i class="fas fa-sitemap"></i> System Design</span>
+                            <span class="skill-item"><i class="fas fa-bolt"></i> Spark</span>
+                            <span class="skill-item"><i class="fas fa-chart-bar"></i> Tableau</span>
+                            <span class="skill-item"><i class="fab fa-aws"></i> AWS</span>
+                            <span class="skill-item"><i class="fab fa-google"></i> GCP</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -1070,8 +1176,9 @@
         // Typing animation for job titles
         const typingText = document.getElementById('typingText');
         const titles = [
+            { full: ' Data Enthusiast', base: ' Data ', changing: 'Enthusiast' },
             { full: ' Data Engineer', base: ' Data ', changing: 'Engineer' },
-            { full: ' Python Developer', base: '', changing: ' Python Developer' }
+            { full: ' Software Engineer', base: '', changing: ' Software Engineer' }
         ];
         let currentTitle = 0;
         let currentChar = 0;
@@ -1142,13 +1249,49 @@
             setTimeout(typeWriter, typeSpeed);
         }
 
-        setTimeout(typeWriter, 1000);
+        // Update active navigation based on scroll position
+        function updateActiveNav() {
+            const navItems = document.querySelectorAll('.nav-item');
+            if (navItems.length === 0) return;
+
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            let activeSection = 'home';
+            
+            const sections = ['home', 'about', 'resume', 'projects', 'contact'];
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.2) {
+                        activeSection = sectionId;
+                    }
+                }
+            });
+            
+            navItems.forEach(nav => nav.classList.remove('active'));
+            const activeNav = document.querySelector(`[href="#${activeSection}"]`);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+        }
+
+        // Update progress bar
+        function updateProgressBar() {
+            const progressFill = document.getElementById('progressFill');
+            if (!progressFill) return;
+
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            progressFill.style.height = scrollProgress + '%';
+        }
 
         // Navigation and Scroll Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navItems = document.querySelectorAll('.nav-item');
             const mainContent = document.getElementById('mainContent');
-            const progressFill = document.getElementById('progressFill');
 
             // Handle navigation clicks
             if (navItems.length > 0) {
@@ -1189,43 +1332,6 @@
                 mainContent.addEventListener('scroll', handleScroll);
             }
             window.addEventListener('scroll', handleScroll);
-
-            // Update active navigation based on scroll position
-            function updateActiveNav() {
-                if (navItems.length === 0) return;
-
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const windowHeight = window.innerHeight;
-                let activeSection = 'home';
-                
-                const sections = ['home', 'about', 'resume', 'projects', 'contact'];
-                
-                sections.forEach(sectionId => {
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        const rect = section.getBoundingClientRect();
-                        if (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.2) {
-                            activeSection = sectionId;
-                        }
-                    }
-                });
-                
-                navItems.forEach(nav => nav.classList.remove('active'));
-                const activeNav = document.querySelector(`[href="#${activeSection}"]`);
-                if (activeNav) {
-                    activeNav.classList.add('active');
-                }
-            }
-
-            // Update progress bar
-            function updateProgressBar() {
-                if (!progressFill) return;
-
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollProgress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-                progressFill.style.height = scrollProgress + '%';
-            }
 
             // Intersection Observer for animations
             const observerOptions = {
@@ -1293,6 +1399,9 @@
                     homeNav.classList.add('active');
                 }
             }, 200);
+
+            // Start typing animation
+            setTimeout(typeWriter, 1000);
         });
 
         // Resize handler
